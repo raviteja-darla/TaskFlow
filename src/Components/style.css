@@ -1,0 +1,139 @@
+.header-input {
+    background: rgba(255, 255, 255, 0.123);
+    border: 2px solid rgba(252, 252, 252, 0.151);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Heading */
+.heading {
+    color: rgb(153, 82, 224);
+}
+
+/* Input + Button Wrapper */
+.userinput-button {
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+/* Input */
+.userinput-button input {
+    width: 70%;
+    padding: 8px;
+
+    background: rgba(255, 255, 255, 0.171);
+    border: 2px solid rgba(252, 252, 252, 0.151);
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 15px;
+    color: white;
+
+    transition: 0.5s ease;
+}
+
+.userinput-button input:focus {
+    background: white;
+    border: 2px solid rgb(153, 82, 224);
+    color: black;
+
+    transition: 0.5s ease;
+}
+
+/* Button */
+.userinput-button button {
+    width: 28%;
+
+    background: rgb(153, 82, 224);
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: white;
+
+    cursor: pointer;
+}
+
+/* Todo List */
+.todo-list-wrapper {
+    width: 100%;
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    list-style: none;
+}
+
+/* Todo Item */
+.todo-item {
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.123);
+    border: 2px solid rgba(252, 252, 252, 0.151);
+    border-radius: 10px;
+
+    backdrop-filter: blur(5px);
+}
+
+/* Checkbox + Text */
+.checkbox-todoItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 18px;
+    overflow: hidden;
+}
+
+/* Edit Input */
+.checkbox-todoItem .edit-todo {
+    width: 100%;
+    padding: 8px;
+
+    border: 2px solid rgb(153, 82, 224);
+    border-radius: 10px;
+    outline: none;
+
+    transition: 0.5s ease;
+}
+
+/* Checkbox */
+.todo-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* CRUD Buttons */
+.todo-curd-btn {
+    display: flex;
+    gap: 5px;
+}
+
+.todo-curd-btn button {
+    padding: 8px 20px;
+
+    background: rgb(153, 82, 224);
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: white;
+
+    cursor: pointer;
+}
