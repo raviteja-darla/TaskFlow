@@ -122,7 +122,7 @@
 /* CRUD Buttons */
 .todo-curd-btn {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
 .todo-curd-btn button {
@@ -136,4 +136,58 @@
     color: white;
 
     cursor: pointer;
+}
+.search-filter {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.123);
+    border: 2px solid rgba(252, 252, 252, 0.151);
+    margin-top: 20px;
+}
+.todoFilter-btn {
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoFilter-btn button {
+    width: 33.33333333%;
+
+    background: rgb(153, 82, 224);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    
+
+    font-size: 15px;
+    color: white;
+
+    cursor: pointer;
+}
+
+.search-todo-input{
+    width: 100%;
+    padding: 8px;
+
+    background: rgba(255, 255, 255, 0.171);
+    border: 2px solid rgba(252, 252, 252, 0.151);
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 15px;
+    color: white;
+
+    transition: 0.5s ease;
+
+}
+
+.search-todo-input:focus {
+    background: white;
+    border: 2px solid rgb(153, 82, 224);
+    color: black;
+    transition: 0.5s ease;
+
 }

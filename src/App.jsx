@@ -4,6 +4,7 @@ import './Components/style.css'
 import Header from './Components/Header'
 import TodoInput from './Components/TodoInput'
 import TodoList from './Components/TodoList'
+import TodoFilters from './Components/TodoFilters'
 
 const App = () => {
 
@@ -44,18 +45,32 @@ const App = () => {
         )
     }
 
+    const [filter, setFilter] = useState("All")
+    const [searchText, setSearchText] = useState("")
+
     return (
         <div className='todo-app-warpper'>
             <div className='header-input'>
                 <Header />
                 <TodoInput onAddTodo={addTodo}/>
             </div>
-                <TodoList 
-                    todos = {todos}
-                    onToggleTodo = {toggleTodo}
-                    onDeleteTodo = {deleteTodo} 
-                    onEditTodo = {editTodo}
-                />
+
+            <TodoFilters 
+                filter = {filter}
+                setFilter = {setFilter}
+                searchText = {searchText}
+                setSearchText = {setSearchText}
+            />
+
+            <TodoList 
+                todos = {todos}
+                onToggleTodo = {toggleTodo}
+                onDeleteTodo = {deleteTodo} 
+                onEditTodo = {editTodo}
+                filter = {filter}
+                setFilter = {setFilter}
+                searchText = {searchText}
+            />
         </div>
     )
 }
