@@ -1,8 +1,10 @@
-import React from 'react'
 import TodoItem from './TodoItem'
+import { useTodos } from '../context/TodoContext'
 import './style.css'
 
-const TodoList = ({todos, onToggleTodo, onDeleteTodo, onEditTodo, filter, searchText}) => {0
+const TodoList = () => {
+
+    const {todos, filter, searchText} = useTodos()
 
     const filterTodo = todos.filter(todo => {
         if(filter === "active") return !todo.completed;
@@ -14,16 +16,10 @@ const TodoList = ({todos, onToggleTodo, onDeleteTodo, onEditTodo, filter, search
     return (
         <div>
             {filterTodo.map(todo => (
-                <TodoItem 
-                    key = {todo.id}
-                    todo = {todo}
-                    onToggleTodo = {onToggleTodo}
-                    onDeleteTodo = {onDeleteTodo}
-                    onEditTodo = {onEditTodo}
-                />
+                <TodoItem key = {todo.id} todo = {todo}/>
             ))}
         </div>
     )
 }
 
-export default TodoList
+export default TodoList;

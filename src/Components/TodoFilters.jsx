@@ -1,7 +1,11 @@
 import React from 'react'
+import { useTodos } from '../context/TodoContext'
 import './style.css'
 
-const TodoFilters = ({filter, setFilter, searchText, setSearchText}) => {
+const TodoFilters = () => {
+
+    const {filter, setFilter, searchText, setSearchText} = useTodos(); 
+
     return (
         <div >
             <div className='search-filter'>
@@ -25,4 +29,4 @@ const TodoFilters = ({filter, setFilter, searchText, setSearchText}) => {
     )
 }
 
-export default TodoFilters
+export default TodoFilters;

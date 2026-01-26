@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useTodos } from '../context/TodoContext';
 import './style.css'
 
-const TodoItem = ({todo, onToggleTodo, onDeleteTodo, onEditTodo}) => {
+const TodoItem = ({todo}) => {
+
+    const { onToggleTodo, onDeleteTodo, onEditTodo } = useTodos();
 
     const [isEditing, setIsEditing] = useState(false);
     const [editText, setEditText] = useState(todo.text);

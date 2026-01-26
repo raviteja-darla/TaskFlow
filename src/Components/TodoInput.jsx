@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import {useTodos} from '../context/TodoContext'
 import './style.css'
 
-const TodoInput = ({onAddTodo}) => {
+const TodoInput = () => {
 
     const [text, setText] = useState("");
     
+    // Get onAddTodo from Global Context
+    const {onAddTodo} = useTodos();
+
     const submitTodo = () => {
         if(!text.trim()) return;
 
@@ -25,4 +29,4 @@ const TodoInput = ({onAddTodo}) => {
     )
 }
 
-export default TodoInput
+export default TodoInput;
