@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTodos } from '../context/TodoContext';
 import './style.css'
 
 const TodoItem = ({todo}) => {
 
-    const { onToggleTodo, onDeleteTodo, onEditTodo } = useTodos();
+    const { toggleTodo, deleteTodo, editTodo } = useTodos();
 
     const [isEditing, setIsEditing] = useState(false);
     const [editText, setEditText] = useState(todo.text);
@@ -12,9 +12,13 @@ const TodoItem = ({todo}) => {
     
     const handleSave = () => {
         if(!editText.trim()) return;
-        onEditTodo(todo.id, editText)
+        editTodo(todo.id, editText)
         setIsEditing(false);
     }
+
+    useEffect(() => {
+        setEditText(todo.text);
+    }, [todo.text]);
 
     return (
         <div className='todo-list-wrapper'>
@@ -24,7 +28,8 @@ const TodoItem = ({todo}) => {
 
                     <input 
                         type = "checkbox"
-                        onChange = {() => onToggleTodo(todo.id)}
+                        checked={todo.completed}
+                        onChange = {() => toggleTodo(todo.id)}
                     />
                     
                     {isEditing ? (
@@ -34,8 +39,9 @@ const TodoItem = ({todo}) => {
                             className='edit-todo'
                         />
                     ) : (
-                        <span
-                            style = {{textDecoration : todo.completed ? "line-through" : "none"}}   
+                        <span style={{textDecoration: todo.completed ? "line-through" : "none", 
+                                    color: todo.completed ? "grey" : "white",
+                                    fontStyle: todo.completed ? "italic" : "none"}}
                         >
                             {todo.text}
                         </span>
@@ -52,7 +58,7 @@ const TodoItem = ({todo}) => {
                     )}
                     
                     <button
-                        onClick = {() => onDeleteTodo(todo.id)}
+                        onClick = {() => deleteTodo(todo.id)}
                     >Delete</button>
                 </div>
             </li>

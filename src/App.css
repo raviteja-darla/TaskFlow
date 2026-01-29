@@ -4,3 +4,14 @@
     height: auto;
     text-align: center;
 }
+
+@media (min-width: 500px) {
+    .todo-app-warpper {
+        width: 500px;
+    }
+}
+@media (min-width: 768px) {
+    .todo-app-warpper {
+        width: 768px;
+    }
+}

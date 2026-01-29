@@ -71,7 +71,8 @@
 }
 
 /* Todo Item */
-.todo-item {
+.todo-item,
+.no-items {
     width: 100%;
     padding: 10px;
 
@@ -85,6 +86,11 @@
     border-radius: 10px;
 
     backdrop-filter: blur(5px);
+}
+
+.no-items {
+    margin-top: 20px;
+    justify-content: center;
 }
 
 /* Checkbox + Text */
@@ -155,17 +161,19 @@
 
 .todoFilter-btn button {
     width: 33.33333333%;
-
-    background: rgb(153, 82, 224);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    
-
     font-size: 15px;
+    background-color: #444;
     color: white;
-
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ACTIVE FILTER BUTTON */
+.todoFilter-btn .active-btn {
+    background-color: #9b5de5;
 }
 
 .search-todo-input{
@@ -189,5 +197,5 @@
     border: 2px solid rgb(153, 82, 224);
     color: black;
     transition: 0.5s ease;
-
 }
+

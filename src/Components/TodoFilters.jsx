@@ -6,6 +6,10 @@ const TodoFilters = () => {
 
     const {filter, setFilter, searchText, setSearchText} = useTodos(); 
 
+    // const { clearCompleted } = useTodos();
+
+    const filters = ["all", "active", "completed"];
+
     return (
         <div >
             <div className='search-filter'>
@@ -20,9 +24,16 @@ const TodoFilters = () => {
                 </div>
                 
                 <div className='todoFilter-btn'>
-                    <button onClick = {() => setFilter("all")}>All</button>
-                    <button onClick = {() => setFilter("active")}>Active</button>
-                    <button onClick = {() => setFilter("completed")}>Completed</button>
+                    {filters.map(type => (
+                        <button
+                        key={type}
+                        className={filter === type ? "active-btn" : ""}
+                        onClick={() => setFilter(type)}
+                        >
+                        {type.charAt(0).toUpperCase() + type.slice(1)}
+                        </button>
+                    ))}
+                    {/* <button onClick = {() => clearCompleted("completed")}>Clear Completed</button> */}
                 </div>
             </div>
         </div>
