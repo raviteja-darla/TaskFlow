@@ -88,7 +88,7 @@ Updated UI
 
 ```bash
 # Clone repository
-git clone <your-repo-url>
+git clone [<your-repo-url>](https://github.com/raviteja-darla/TaskFlow.git)
 
 # Install dependencies
 npm install
