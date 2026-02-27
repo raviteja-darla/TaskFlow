@@ -6,7 +6,7 @@ A **professional-level Todo List application** built using **React (Frontend onl
 
 ## 🚀 Live Demo
 
-> [*(Add your deployed Netlify / Vercel link here)*](https://task-flow-gamma-silk.vercel.app/)
+> [*(Please Click Here To Check Out My Project.)*](https://task-flow-gamma-silk.vercel.app/)
 
 ---
 
